@@ -1,0 +1,3 @@
+# Cloudflare Pages redirects.
+# Canonicalize www -> apex so there's one address for the site.
+https://www.nycgov101.com/* https://nycgov101.com/:splat 301!
