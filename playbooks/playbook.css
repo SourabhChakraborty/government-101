@@ -14,6 +14,16 @@ html:not(.js) .step:not([open]) .step-body { display: block; }
 html:not(.js) .pb-progress { display: none; }
 html:not(.js) .step .disclose { display: none; }
 
+/* ---------- Playbook page background ----------
+   Guided experiences get their own tinted canvas so they read as a distinct
+   "mode" from the encyclopedia/directory. A soft civic-blue wash up top settles
+   into a neutral well; the white step cards then pop against it. */
+body {
+  background-color: var(--paper-2);
+  background-image: linear-gradient(180deg, var(--accent-bg) 0, transparent 420px);
+  background-repeat: no-repeat;
+}
+
 /* ---------- Page intro ---------- */
 .pb-intro { padding-top: 2.5rem; }
 .pb-meta {
@@ -35,9 +45,28 @@ html:not(.js) .step .disclose { display: none; }
 .pb-workflow b { color: var(--ink); }
 .pb-workflow .arrow { color: var(--accent-ink); font-weight: 800; padding: 0 .15rem; }
 
-/* ---------- Per-scenario source map ---------- */
-.sourcemap { margin: 1.5rem 0 .5rem; }
+/* ---------- Per-scenario source map (sticky) ----------
+   Pins below the site header so the path stays visible while you work the trail.
+   When pinned (.is-stuck, toggled by playbook.js) it collapses to a slim bar. */
+.sourcemap {
+  position: sticky; top: var(--header-h); z-index: 30;
+  margin: 1.5rem auto .75rem;
+  background: color-mix(in srgb, var(--paper) 92%, transparent);
+  backdrop-filter: saturate(1.4) blur(8px);
+  border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: .85rem 1.1rem;
+  transition: padding .2s ease, box-shadow .2s ease;
+}
+.sourcemap > figure { margin: 0; }
+.sourcemap figcaption:first-child { transition: margin .2s ease, font-size .2s ease; }
 .sourcemap-scroll { overflow-x: auto; padding-bottom: .35rem; }
+/* collapsed state while pinned */
+.sourcemap.is-stuck { padding: .5rem 1.1rem; box-shadow: 0 6px 18px rgba(16,25,31,.10); }
+.sourcemap.is-stuck figcaption:first-child { font-size: .72rem; margin-bottom: .4rem; }
+.sourcemap.is-stuck figcaption:last-child { display: none; }
+.sourcemap.is-stuck .map-node .num { width: 1.7rem; height: 1.7rem; font-size: .82rem; box-shadow: 0 0 0 3px var(--accent-bg); }
+.sourcemap.is-stuck .map-node .stage { display: none; }
+.sourcemap.is-stuck .map-node { gap: .25rem; }
 .sourcemap ol {
   display: flex; align-items: stretch; gap: 0;
   list-style: none; margin: 0; padding: .25rem 0; min-width: max-content;
@@ -68,6 +97,10 @@ html:not(.js) .step .disclose { display: none; }
 .map-node .stage { font-size: .72rem; color: var(--ink-faint); }
 .map-node:hover .label { color: var(--accent-ink); text-decoration: underline; }
 .map-node:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+/* the node for the step you're currently on (synced by playbook.js) */
+.map-node.is-current .num { box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 35%, transparent); transform: scale(1.08); }
+.map-node.is-current .label { color: var(--accent-ink); }
+@media (prefers-reduced-motion: reduce) { .map-node.is-current .num { transform: none; } }
 .sourcemap figcaption { margin-top: .6rem; font-size: .85rem; color: var(--ink-faint); }
 
 /* ---------- Progress indicator ---------- */
@@ -102,7 +135,12 @@ html:not(.js) .step .disclose { display: none; }
 .step {
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
   box-shadow: var(--shadow); overflow: hidden;
+  transition: border-color .2s ease, box-shadow .2s ease;
 }
+/* the step you're reading gets a clear accent so progress reads at a glance */
+.step[open] { border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); box-shadow: 0 0 0 2px var(--accent-bg), var(--shadow); }
+/* fill the trail number for the open step (graceful: no-op where :has is unsupported) */
+.trail > li:has(.step[open]) > .step-num { background: var(--accent); color: #fff; border-color: var(--accent); }
 /* <summary> is the step header; works as a button with no JS */
 .step > summary {
   list-style: none; cursor: pointer;
