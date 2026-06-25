@@ -1,4 +1,4 @@
-/* NYC Gov for Builders — calm, content-first, WCAG 2.1 AA.
+/* NYC Gov 101 — calm, content-first, WCAG 2.1 AA.
    One stylesheet for the whole site. Playbook pages add their own scoped CSS. */
 
 :root {
@@ -201,15 +201,13 @@ code, .mono { font-family: var(--mono); font-size: .92em; }
 .shortlist-head { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-bottom: 1rem; }
 .shortlist-head h3 { margin: 0; }
 
-/* ---------- Audience switch ---------- */
-.audience { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; }
+/* ---------- Filter chips (Directory) ---------- */
 .chip {
   font: inherit; font-size: .92rem; font-weight: 650; cursor: pointer;
   background: var(--paper); border: 1px solid var(--line); color: var(--ink-soft);
   padding: .4rem .8rem; border-radius: 999px;
 }
 .chip:hover { background: var(--paper-3); }
-.chip[aria-pressed="true"] { background: var(--accent-bg); color: var(--accent-ink); border-color: var(--accent); }
 /* filter chips wrap a hidden checkbox */
 label.chip { user-select: none; }
 label.chip:has(input:checked) { background: var(--accent-bg); color: var(--accent-ink); border-color: var(--accent); }

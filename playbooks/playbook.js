@@ -1,4 +1,4 @@
-/* NYC Gov for Builders — playbook progressive-disclosure enhancement.
+/* NYC Gov 101 — playbook progressive-disclosure enhancement.
    This is an ENHANCEMENT only. With JS off, every <details class="step"> is
    rendered open (via the no-js rule in playbook.css), so the whole playbook
    is readable and followable. This script:

@@ -1,4 +1,4 @@
-/* NYC Gov for Builders — shared playbook stylesheet.
+/* NYC Gov 101 — shared playbook stylesheet.
    Scoped styles for the guided-experience pages. Loaded AFTER style.css,
    so it reuses every token (--ink, --accent, badges, --radius, --shadow,
    dark-mode and the reduced-motion reset already defined globally).

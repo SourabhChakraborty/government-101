@@ -1,4 +1,4 @@
-# Product Brief v2 — "NYC Gov for Builders" (working title)
+# Product Brief v2 — "NYC Gov 101" (working title)
 
 A curated, encyclopedic web resource that maps NYC government's data landscape, explains how the
 system actually works, and shows worked examples of civic data in use — so a new technologist can

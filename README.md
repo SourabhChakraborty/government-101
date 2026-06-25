@@ -1,4 +1,4 @@
-# NYC Gov for Builders
+# NYC Gov 101
 
 A curated, encyclopedic web resource that maps **NYC government's data landscape**, explains how the
 system actually works, and shows worked examples of civic data in use — so a new technologist can

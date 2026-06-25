@@ -1,4 +1,4 @@
-/* NYC Gov for Builders — shared client logic.
+/* NYC Gov 101 — shared client logic.
    Renders the Directory, the Start-here problem→sources map, and the Glossary
    from data/sources.json + data/glossary.json. No framework, no build step. */
 
@@ -109,6 +109,20 @@
     try { return new URL(url).host.replace(/^www\./, ""); } catch (e) { return url; }
   }
 
+  // Cards are rendered after the page loads, so the browser's native jump to
+  // location.hash fires before the target exists. Re-run it once content is in.
+  function scrollToHash(root) {
+    const id = decodeURIComponent(location.hash.replace(/^#/, ""));
+    if (!id) return;
+    const target = root.querySelector("#" + (window.CSS && CSS.escape ? CSS.escape(id) : id));
+    if (!target) return;
+    target.scrollIntoView();
+    if (typeof target.focus === "function") {
+      if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+      target.focus({ preventScroll: true });
+    }
+  }
+
   // ---- Directory page ----------------------------------------------------
 
   async function initDirectory(root) {
@@ -149,6 +163,7 @@
     root.querySelectorAll('input[type="checkbox"]').forEach(i => i.addEventListener("change", apply));
     search.addEventListener("input", apply);
     apply();
+    scrollToHash(root);
   }
 
   // ---- Start-here page ---------------------------------------------------
@@ -166,7 +181,6 @@
 
     const grid = root.querySelector("#problem-grid");
     const result = root.querySelector("#problem-result");
-    let currentAudience = "all";
 
     const cards = problems.map(p => {
       const card = el("button", {
@@ -184,15 +198,6 @@
     grid.textContent = "";
     cards.forEach(c => grid.appendChild(c));
 
-    function audienceLine(p) {
-      const lines = {
-        technologist: "Builder view: each source below carries its data-access route — start with the API/bulk ones for anything programmatic.",
-        gov: "New-employee view: the official sources are your record of truth; the independent ones tell you what's actually being said.",
-        cbo: "CBO view: every source below is self-serve and plain-language — no insider login or veteran required."
-      };
-      return currentAudience !== "all" ? lines[currentAudience] : null;
-    }
-
     function choose(pid) {
       const p = problems.find(x => x.id === pid);
       cards.forEach(c => c.setAttribute("aria-expanded", String(c.dataset.problem === pid)));
@@ -202,9 +207,6 @@
         el("h3", { text: p.label }),
         el("span", { class: "result-count", text: list.length + " sources to start with" })
       ]);
-
-      const note = audienceLine(p);
-      const noteEl = note ? el("p", { class: "note small", text: note }) : null;
 
       const cardsWrap = el("div", { class: "cards" }, list.map(sourceCard));
 
@@ -227,7 +229,7 @@
         el("pre", { text: copyText })
       ]);
 
-      const blocks = [head, noteEl, cardsWrap];
+      const blocks = [head, cardsWrap];
 
       if (p.playbooks && p.playbooks.length) {
         blocks.push(el("h4", { class: "eyebrow", text: "Walk through it", style: "margin-top:1.5rem" }));
@@ -252,7 +254,7 @@
     function buildCopyText(p, list) {
       const lines = [];
       lines.push("# NYC data sources — " + p.label);
-      lines.push("# via NYC Gov for Builders");
+      lines.push("# via NYC Gov 101");
       lines.push("");
       list.forEach(s => {
         lines.push("- " + s.name + " — " + s.url);
@@ -263,17 +265,6 @@
       });
       return lines.join("\n");
     }
-
-    // audience switch
-    root.querySelectorAll(".chip[data-audience]").forEach(chip => {
-      chip.addEventListener("click", () => {
-        currentAudience = chip.dataset.audience;
-        root.querySelectorAll(".chip[data-audience]").forEach(c =>
-          c.setAttribute("aria-pressed", String(c === chip)));
-        const open = cards.find(c => c.getAttribute("aria-expanded") === "true");
-        if (open) choose(open.dataset.problem);
-      });
-    });
 
     // deep-link: #p-xxx opens that problem
     const hash = location.hash.replace("#", "");
@@ -304,6 +295,8 @@
         where
       ]));
     });
+
+    scrollToHash(root);
   }
 
   // ---- boot --------------------------------------------------------------
