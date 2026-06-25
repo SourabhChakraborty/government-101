@@ -15,14 +15,20 @@ html:not(.js) .pb-progress { display: none; }
 html:not(.js) .step .disclose { display: none; }
 
 /* ---------- Playbook page background ----------
-   Guided experiences get their own tinted canvas so they read as a distinct
-   "mode" from the encyclopedia/directory. A soft civic-blue wash up top settles
-   into a neutral well; the white step cards then pop against it. */
+   Each guided experience gets its OWN tint so the four read as distinct places.
+   Tints reuse the existing *-bg tokens, which already carry light + dark values,
+   so every theme adapts to dark mode for free. A stronger wash up top settles
+   into a gently tinted canvas; the white step cards pop against it. */
 body {
-  background-color: var(--paper-2);
-  background-image: linear-gradient(180deg, var(--accent-bg) 0, transparent 420px);
+  --pb-tint: var(--accent-bg); /* default / fallback */
+  background-color: color-mix(in srgb, var(--pb-tint) 55%, var(--paper-2));
+  background-image: linear-gradient(180deg, var(--pb-tint) 0, transparent 560px);
   background-repeat: no-repeat;
 }
+body.pb-street { --pb-tint: var(--official-bg);    }  /* sanitation — green  */
+body.pb-asylum { --pb-tint: var(--independent-bg); }  /* benefits   — warm   */
+body.pb-agency { --pb-tint: var(--accent-bg);      }  /* government — blue   */
+body.pb-dev    { --pb-tint: var(--data-api-bg);    }  /* land use   — violet */
 
 /* ---------- Page intro ---------- */
 .pb-intro { padding-top: 2.5rem; }
