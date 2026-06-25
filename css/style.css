@@ -247,12 +247,6 @@ label.chip:has(input:focus-visible) { outline: 3px solid var(--accent); outline-
 .rail a b { color: var(--accent-ink); }
 .rail a span { display: block; color: var(--ink-soft); font-size: .9rem; margin-top: .2rem; }
 
-/* ---------- "Coming soon" playbook cards ---------- */
-.rail-soon { background: var(--paper-2); border: 1px dashed var(--line); border-radius: var(--radius); padding: .9rem 1rem; color: var(--ink-soft); opacity: .85; }
-.rail-soon b { color: var(--ink); }
-.rail-soon span { display: block; color: var(--ink-faint); font-size: .9rem; margin-top: .2rem; }
-.rail-soon em { display: inline-block; margin-top: .6rem; font-style: normal; font-size: .76rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--accent-ink); background: var(--accent-bg); padding: .15rem .5rem; border-radius: 999px; }
-
 /* ---------- Notices ---------- */
 .note { border-left: 4px solid var(--accent); background: var(--accent-bg); padding: .85rem 1rem; border-radius: 0 var(--radius) var(--radius) 0; color: var(--ink-soft); }
 .note.warn { border-color: var(--warn); background: var(--warn-bg); }

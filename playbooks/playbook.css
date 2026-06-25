@@ -4,6 +4,16 @@
    dark-mode and the reduced-motion reset already defined globally).
    Everything here degrades to readable, static content with no JS. */
 
+/* ---------- No-JS fallback ----------
+   playbook.js adds `.js` to <html>; until then (or forever, if JS is off) every
+   step renders open and the JS-only progress bar / chevrons are hidden, so the
+   playbook is fully readable and followable without scripting. */
+html:not(.js) .step { display: block !important; }
+html:not(.js) .step > summary { cursor: default; }
+html:not(.js) .step:not([open]) .step-body { display: block; }
+html:not(.js) .pb-progress { display: none; }
+html:not(.js) .step .disclose { display: none; }
+
 /* ---------- Page intro ---------- */
 .pb-intro { padding-top: 2.5rem; }
 .pb-meta {
