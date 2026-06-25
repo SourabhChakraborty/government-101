@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Directory — NYC Gov for Builders</title>
+  <meta name="description" content="The curated, annotated catalog of NYC government data sources. Filter by category, who runs it, and how you can access the data.">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="./index.html">
+        <span class="dot" aria-hidden="true"></span>
+        <span>NYC Gov for Builders<small>map the city's data landscape</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="./index.html">Start here</a>
+        <a href="./glossary.html">The Lay of the Land</a>
+        <a href="./directory.html" aria-current="page">The Directory</a>
+        <a href="./playbooks.html">Playbooks</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="wrap" style="padding-top:2.5rem">
+      <p class="eyebrow">The Directory — the data-landscape map</p>
+      <h1>Every source, annotated.</h1>
+      <p class="lede read">The curated catalog. Each entry answers a builder's questions — what data exists, whether it's usable, how to access it, and what to watch out for. Filter by category, by official vs. independent, and by how you can get the data.</p>
+    </div>
+
+    <div class="wrap" id="directory-app" style="padding-bottom:3rem">
+      <div class="toolbar" role="search">
+        <div class="search-row">
+          <label class="visually-hidden" for="dir-search">Search sources</label>
+          <input type="search" id="dir-search" placeholder="Search sources — e.g. ‘contracts’, ‘311’, ‘zoning’…" autocomplete="off">
+          <span class="result-count" id="result-count" aria-live="polite"></span>
+        </div>
+        <div class="filter-group">
+          <fieldset>
+            <legend>Category</legend>
+            <label class="chip"><input type="checkbox" name="f-cat" value="council" class="visually-hidden"> City Council</label>
+            <label class="chip"><input type="checkbox" name="f-cat" value="community-boards" class="visually-hidden"> Community Boards</label>
+            <label class="chip"><input type="checkbox" name="f-cat" value="operations" class="visually-hidden"> Operations</label>
+            <label class="chip"><input type="checkbox" name="f-cat" value="additional" class="visually-hidden"> Spending / rules / context</label>
+          </fieldset>
+          <fieldset>
+            <legend>Run by</legend>
+            <label class="chip"><input type="checkbox" name="f-run" value="official" class="visually-hidden"> Official</label>
+            <label class="chip"><input type="checkbox" name="f-run" value="independent" class="visually-hidden"> Independent</label>
+          </fieldset>
+          <fieldset>
+            <legend>Data access</legend>
+            <label class="chip"><input type="checkbox" name="f-access" value="api" class="visually-hidden"> API</label>
+            <label class="chip"><input type="checkbox" name="f-access" value="bulk" class="visually-hidden"> Bulk download</label>
+            <label class="chip"><input type="checkbox" name="f-access" value="web" class="visually-hidden"> Web only</label>
+          </fieldset>
+        </div>
+      </div>
+
+      <noscript>
+        <p class="note warn">Filtering and search need JavaScript, but the raw, complete source list lives in <a href="./data/sources.json">data/sources.json</a> — readable as-is.</p>
+      </noscript>
+
+      <div id="directory-grid" class="cards" aria-live="polite">
+        <p class="muted">Loading the source catalog…</p>
+      </div>
+
+      <hr class="soft">
+      <p class="muted small">A <strong>★ Official</strong> badge means government-run; <strong>◇ Independent</strong> means a non-government tool (often built on official data). The data-access badge shows whether you get an <strong>API</strong>, a <strong>bulk download</strong>, or a <strong>web-only</strong> interface. Sources marked <strong>Stale-prone</strong> or <strong>Unverified</strong> carry an honest warning rather than being dropped.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot-grid">
+      <div>
+        <h4>NYC Gov for Builders</h4>
+        <p>A curated, encyclopedic map of NYC government's data landscape for new civic technologists, gov employees, and CBO staff.</p>
+      </div>
+      <div>
+        <h4>Sections</h4>
+        <a href="./index.html">Start here</a>
+        <a href="./glossary.html">The Lay of the Land</a>
+        <a href="./directory.html">The Directory</a>
+        <a href="./playbooks.html">Playbooks</a>
+      </div>
+      <div>
+        <h4>Contribute</h4>
+        <a href="https://github.com/SourabhChakraborty/government-101" target="_blank" rel="noopener">Source on GitHub ↗</a>
+        <a href="https://github.com/SourabhChakraborty/government-101/blob/main/README.md" target="_blank" rel="noopener">Add a source (one data file) ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>

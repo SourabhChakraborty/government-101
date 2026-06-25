@@ -1,0 +1,197 @@
+/* NYC Gov for Builders — shared playbook stylesheet.
+   Scoped styles for the guided-experience pages. Loaded AFTER style.css,
+   so it reuses every token (--ink, --accent, badges, --radius, --shadow,
+   dark-mode and the reduced-motion reset already defined globally).
+   Everything here degrades to readable, static content with no JS. */
+
+/* ---------- Page intro ---------- */
+.pb-intro { padding-top: 2.5rem; }
+.pb-meta {
+  display: flex; flex-wrap: wrap; gap: .5rem .75rem; align-items: center;
+  margin: 1rem 0 0; padding: 0; list-style: none;
+}
+.pb-meta li {
+  display: inline-flex; align-items: center; gap: .4rem;
+  background: var(--paper-2); border: 1px solid var(--line-soft);
+  border-radius: 999px; padding: .3rem .75rem; font-size: .9rem; color: var(--ink-soft);
+}
+.pb-meta .k { font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-faint); font-weight: 800; }
+.pb-workflow {
+  margin-top: 1.25rem; padding: .9rem 1.1rem;
+  background: var(--accent-bg); border-left: 4px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0; color: var(--ink-soft);
+  font-size: 1.02rem;
+}
+.pb-workflow b { color: var(--ink); }
+.pb-workflow .arrow { color: var(--accent-ink); font-weight: 800; padding: 0 .15rem; }
+
+/* ---------- Per-scenario source map ---------- */
+.sourcemap { margin: 1.5rem 0 .5rem; }
+.sourcemap-scroll { overflow-x: auto; padding-bottom: .35rem; }
+.sourcemap ol {
+  display: flex; align-items: stretch; gap: 0;
+  list-style: none; margin: 0; padding: .25rem 0; min-width: max-content;
+}
+.sourcemap li { display: flex; align-items: center; }
+/* the connector line between nodes (carries the "path" information) */
+.sourcemap .link {
+  flex: 0 0 2.4rem; height: 2px; background: var(--accent);
+  position: relative; align-self: center;
+}
+.sourcemap .link::after {
+  content: ""; position: absolute; right: -1px; top: 50%;
+  width: 0; height: 0; transform: translateY(-50%);
+  border-top: 5px solid transparent; border-bottom: 5px solid transparent;
+  border-left: 7px solid var(--accent);
+}
+.map-node {
+  display: flex; flex-direction: column; align-items: center; gap: .35rem;
+  text-decoration: none; color: var(--ink); width: 8.5rem; text-align: center;
+}
+.map-node .num {
+  display: grid; place-items: center;
+  width: 2.1rem; height: 2.1rem; border-radius: 50%;
+  background: var(--accent); color: #fff; font-weight: 800; font-size: .95rem;
+  box-shadow: 0 0 0 4px var(--accent-bg); flex: none;
+}
+.map-node .label { font-size: .82rem; font-weight: 700; line-height: 1.25; color: var(--ink); }
+.map-node .stage { font-size: .72rem; color: var(--ink-faint); }
+.map-node:hover .label { color: var(--accent-ink); text-decoration: underline; }
+.map-node:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+.sourcemap figcaption { margin-top: .6rem; font-size: .85rem; color: var(--ink-faint); }
+
+/* ---------- Progress indicator ---------- */
+.pb-progress {
+  display: flex; align-items: center; gap: .6rem;
+  margin: 2rem 0 .5rem; font-size: .85rem; color: var(--ink-faint); font-weight: 700;
+}
+.pb-progress .bar { flex: 1; height: 6px; border-radius: 999px; background: var(--paper-3); overflow: hidden; }
+.pb-progress .bar > span { display: block; height: 100%; background: var(--accent); border-radius: 999px; transition: width .3s ease; width: 0; }
+
+/* ---------- The trail (vertical numbered steps) ---------- */
+.trail { list-style: none; margin: 1rem 0 0; padding: 0; counter-reset: step; }
+.trail > li {
+  position: relative; padding: 0 0 1.5rem 3.5rem; counter-increment: step;
+}
+/* the vertical spine connecting steps */
+.trail > li::before {
+  content: ""; position: absolute; left: 1.05rem; top: 2.6rem; bottom: -.2rem;
+  width: 2px; background: var(--line);
+}
+.trail > li:last-child::before { display: none; }
+/* the numbered node */
+.trail > li > .step-num {
+  position: absolute; left: 0; top: 0;
+  display: grid; place-items: center;
+  width: 2.2rem; height: 2.2rem; border-radius: 50%;
+  background: var(--paper); border: 2px solid var(--accent); color: var(--accent-ink);
+  font-weight: 800; font-size: 1rem; z-index: 1;
+}
+.trail > li > .step-num::before { content: counter(step); }
+
+.step {
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: var(--shadow); overflow: hidden;
+}
+/* <summary> is the step header; works as a button with no JS */
+.step > summary {
+  list-style: none; cursor: pointer;
+  padding: 1rem 1.2rem; display: flex; align-items: baseline; gap: .6rem;
+}
+.step > summary::-webkit-details-marker { display: none; }
+.step > summary:hover { background: var(--paper-2); }
+.step > summary:focus-visible { outline: 3px solid var(--accent); outline-offset: -3px; border-radius: var(--radius); }
+.step > summary h2 { font-size: 1.15rem; margin: 0; }
+.step .q-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-faint); font-weight: 800; display: block; margin-bottom: .15rem; }
+.step .disclose {
+  margin-left: auto; align-self: center; flex: none; color: var(--ink-faint);
+  font-size: .8rem; font-weight: 700; display: inline-flex; align-items: center; gap: .3rem;
+}
+.step .disclose .chev { transition: transform .25s ease; display: inline-block; }
+.step[open] .disclose .chev { transform: rotate(90deg); }
+.step[open] .disclose .more { display: none; }
+.step:not([open]) .disclose .less { display: none; }
+
+.step-body { padding: 0 1.2rem 1.2rem; }
+.step-body > * + * { margin-top: 1rem; }
+
+/* ---------- Anatomy blocks inside a step ---------- */
+.step-section .sec-k {
+  font-size: .72rem; text-transform: uppercase; letter-spacing: .06em;
+  color: var(--ink-faint); font-weight: 800; margin: 0 0 .4rem;
+}
+
+/* annotated source preview — stylized representation, never a screenshot */
+.preview {
+  border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--paper-2); overflow: hidden;
+}
+.preview-bar {
+  display: flex; align-items: center; gap: .5rem;
+  padding: .45rem .7rem; background: var(--paper-3); border-bottom: 1px solid var(--line-soft);
+}
+.preview-bar .dots { display: flex; gap: .3rem; }
+.preview-bar .dots span { width: .55rem; height: .55rem; border-radius: 50%; background: var(--line); }
+.preview-bar .addr {
+  font-family: var(--mono); font-size: .78rem; color: var(--ink-faint);
+  background: var(--paper); border: 1px solid var(--line-soft); border-radius: 6px;
+  padding: .12rem .5rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.preview-body { padding: .9rem 1rem 1rem; }
+.preview-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem .75rem; }
+.preview-head .name { font-size: 1.05rem; font-weight: 750; margin: 0; }
+.preview-head .name a { color: var(--ink); text-decoration: none; }
+.preview-head .name a:hover { color: var(--accent-ink); text-decoration: underline; }
+.preview .desc { font-size: .92rem; color: var(--ink-soft); margin: .55rem 0 .75rem; }
+
+/* the one-thing-to-click callout */
+.callout {
+  display: flex; gap: .6rem; align-items: flex-start;
+  background: var(--accent-bg); border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  border-radius: 8px; padding: .65rem .8rem;
+}
+.callout .pointer { color: var(--accent-ink); font-weight: 800; flex: none; line-height: 1.5; }
+.callout .ctxt { font-size: .92rem; color: var(--ink-soft); }
+.callout .ctxt b { color: var(--ink); }
+.callout code { background: var(--paper); border: 1px solid var(--line-soft); border-radius: 5px; padding: .05rem .35rem; }
+
+.preview-foot {
+  margin-top: .75rem; padding-top: .6rem; border-top: 1px solid var(--line-soft);
+  display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; font-size: .85rem;
+}
+.preview-foot .visit { font-weight: 650; margin-left: auto; white-space: nowrap; }
+/* independent-built source gets a dashed accent so the source-type reads at a glance */
+.preview.is-independent { border-left: 3px solid var(--independent); }
+.preview.is-official { border-left: 3px solid var(--official); }
+
+/* "what you'll find" — described shapes of data, never invented numbers */
+.find { background: var(--paper-2); border: 1px solid var(--line-soft); border-radius: var(--radius); padding: .85rem 1rem; }
+.find ul { margin: .3rem 0 0; padding-left: 1.2rem; }
+.find li { margin: .2rem 0; color: var(--ink-soft); font-size: .94rem; }
+/* a tiny stylized "table shape" — column labels only, no fabricated values */
+.table-shape { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .6rem; }
+.table-shape .col {
+  font-family: var(--mono); font-size: .75rem; color: var(--ink-soft);
+  background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: .2rem .5rem;
+}
+
+/* handoff to next step */
+.handoff {
+  display: flex; gap: .55rem; align-items: baseline;
+  border-top: 1px dashed var(--line); padding-top: .9rem; font-size: .95rem; color: var(--ink-soft);
+}
+.handoff .arrow { color: var(--accent-ink); font-weight: 800; flex: none; }
+.handoff b { color: var(--ink); }
+
+/* ---------- "You now have" summary ---------- */
+.outcome { background: var(--official-bg); border: 1px solid color-mix(in srgb, var(--official) 30%, transparent); border-radius: var(--radius); padding: 1.2rem 1.3rem; }
+.outcome h2 { margin-top: 0; }
+.outcome ul { margin: .5rem 0 0; padding-left: 1.2rem; }
+.outcome li { margin: .35rem 0; color: var(--ink-soft); }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 560px) {
+  .map-node { width: 7rem; }
+  .sourcemap .link { flex-basis: 1.6rem; }
+  .trail > li { padding-left: 3rem; }
+}

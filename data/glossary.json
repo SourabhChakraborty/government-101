@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "note": "Plain-language entries that teach who owns what and how decisions get made — not just definitions. Each ends with a 'Where to look →' pointer into the Directory. Time-sensitive facts (officeholders, figures) are deliberately left out so this stays maintainable."
+  },
+  "entries": [
+    {
+      "id": "g-who-owns-what",
+      "term": "Mayoral agencies vs. elected offices (who owns what)",
+      "body": "City government splits into two broad camps. Mayoral agencies (Sanitation, HRA, City Planning, and dozens more) report up to the Mayor and carry out programs and services. Elected offices — the Mayor, the Comptroller, the Public Advocate, the five Borough Presidents, and the 51-member City Council — are chosen by voters and provide direction, oversight, and budget. When you ask “who owns this problem?”, you're usually asking which mayoral agency runs the program and which elected office can be pushed to act on it. Getting this split right is the fastest way to stop guessing about who to contact.",
+      "whereToLook": ["dmmr", "checkbook", "legistar"]
+    },
+    {
+      "id": "g-council-intros",
+      "term": "City Council & Intros",
+      "body": "The City Council is the city's legislature: 51 members, each elected from a district, who pass local laws and approve the budget. A proposed law is called an “Introduction,” or “Intro,” and gets a file number (like 0139-2026) that follows it through its whole life. An Intro is assigned to a committee, may get a hearing, and can be amended before any vote. Tracking a policy almost always starts with finding its Intro number.",
+      "whereToLook": ["intro-nyc", "legistar", "council-legislative-api"]
+    },
+    {
+      "id": "g-stated-meeting",
+      "term": "Stated Meeting",
+      "body": "A Stated Meeting is the full City Council's regular formal session — where the whole body officially introduces new legislation and votes on bills that committees have reported out. It's the moment a bill becomes a law (subject to the Mayor) rather than the place where most debate happens; that work occurs earlier, in committee. If you want to know whether something actually passed, look for the vote at a Stated Meeting.",
+      "whereToLook": ["legistar", "citymeetings"]
+    },
+    {
+      "id": "g-committee-hearing",
+      "term": "Committee hearing",
+      "body": "Most of the Council's real work happens in committees organized by topic (housing, finance, sanitation, and so on). A committee hearing is where a bill gets discussed, where the public and agencies testify, and where amendments take shape before anything reaches the full Council. The official record lists who testified and the outcome, but rarely captures what was actually said — for that you want a transcript. Hearings are the best early signal of where a policy is heading.",
+      "whereToLook": ["legistar", "citymeetings"]
+    },
+    {
+      "id": "g-local-law-vs-resolution",
+      "term": "Local Law vs. resolution",
+      "body": "These look similar but do different things. A local law changes the Administrative Code — it's binding and is what an Intro becomes once passed and enacted. A resolution is a formal statement of the Council's position: it can call on Albany or Congress to act, or take a stance, but it does not by itself change city law. When you read that the Council “passed” something, check which one it is — only a local law carries legal force.",
+      "whereToLook": ["legistar", "intro-nyc", "charter-admin-code"]
+    },
+    {
+      "id": "g-community-board",
+      "term": "Community Board",
+      "body": "New York has 59 community boards, each covering a district of up to ~50 unpaid, appointed members who advise on land use, the budget, and quality-of-life issues. They hold public meetings, review land-use applications, and submit district needs statements and budget requests. Their votes are advisory — they shape decisions and create a public record, but don't make the final call. They're the most accessible entry point for a local issue, and the place to testify first.",
+      "whereToLook": ["community-board-sites", "block-party", "zola-planning"]
+    },
+    {
+      "id": "g-ulurp",
+      "term": "ULURP (how a land-use decision moves)",
+      "body": "ULURP — the Uniform Land Use Review Procedure — is the standardized path most significant land-use actions follow, with public review at each step. The sequence runs Community Board → Borough President → City Planning Commission (CPC) → City Council, with set time limits along the way. The community board and borough president weigh in with advisory recommendations; the CPC and Council take binding votes. Knowing where a project sits in this pipeline tells you who decides next and when you can be heard.",
+      "whereToLook": ["zola-planning", "community-board-sites", "citymeetings", "legistar"]
+    },
+    {
+      "id": "g-borough-president",
+      "term": "Borough President",
+      "body": "Each of the five boroughs elects a Borough President, an office that advocates for the borough, weighs in on land use (including a formal step in ULURP), recommends community-board appointments, and allocates some capital funding. The role is more about influence, convening, and recommendation than direct control over agencies. For a borough-wide or land-use issue, the BP's office is a useful ally and a formal checkpoint.",
+      "whereToLook": ["zola-planning", "capital-projects"]
+    },
+    {
+      "id": "g-mmr",
+      "term": "MMR / PMMR / DMMR",
+      "body": "The Mayor's Management Report (MMR) is a Charter-mandated report card on how city agencies are performing, published with a preliminary version (PMMR) earlier in the year and a final version after the fiscal year ends. The DMMR is the interactive, “dynamic” version — searchable, multi-year, and downloadable. Together they're the official answer to “how is this agency doing?”, measured by the indicators agencies report. Use them as a performance signal, remembering agencies choose what to report.",
+      "whereToLook": ["dmmr", "ibo"]
+    },
+    {
+      "id": "g-city-record",
+      "term": "The City Record",
+      "body": "The City Record is the city's official daily newspaper of record. It publishes procurement notices above a dollar threshold, public hearing notices, proposed and adopted rules, property dispositions, and other official notices. If the city is legally required to tell the public something, it usually appears here — which makes it the place to catch deadlines you'd otherwise miss. Email alerts make it usable without reading it daily.",
+      "whereToLook": ["city-record", "passport", "nyc-rules"]
+    },
+    {
+      "id": "g-procurement",
+      "term": "Procurement / RFx / contract registration",
+      "body": "Procurement is how the city buys goods and services and hires nonprofits to deliver programs. An “RFx” is the family of solicitations (RFP, RFQ, and so on) agencies issue to find a vendor; once awarded, a contract must be registered (often with the Comptroller) before money flows. PASSport is the platform that runs this end to end, and its public view lets anyone follow vendors, solicitations, and contracts. To see what was actually spent rather than just contracted, pair it with Checkbook.",
+      "whereToLook": ["passport", "checkbook", "city-record"]
+    },
+    {
+      "id": "g-capital-vs-expense",
+      "term": "Capital vs. expense budget (and how the budget gets made)",
+      "body": "The city runs two budgets. The expense budget pays for ongoing operations — salaries, services, supplies — and must balance every year. The capital budget pays for long-lived physical things — buildings, bridges, sewers — and is financed over time. The annual cycle runs from the Mayor's preliminary budget through Council hearings and negotiation to an adopted budget by the start of the fiscal year. Knowing which budget a thing lives in tells you which process and which sources to follow.",
+      "whereToLook": ["checkbook", "ibo", "capital-projects", "dmmr"]
+    },
+    {
+      "id": "g-foil",
+      "term": "FOIL",
+      "body": "The Freedom of Information Law (FOIL) is your right to request records from city agencies that aren't already public. You file a request, the agency must respond within set timeframes, and it can release, redact, or deny with a stated reason. OpenRecords is the central portal for filing and tracking these requests across agencies. FOIL is the tool of last resort when the data you need simply isn't published anywhere.",
+      "whereToLook": ["openrecords", "data-sharing"]
+    },
+    {
+      "id": "g-open-data",
+      "term": "Open Data & APIs",
+      "body": "NYC's Open Data law requires agencies to publish their data on a single public portal, where thousands of datasets are available with maps, exports, and Socrata APIs. An API lets you query data programmatically instead of downloading a file, which is how most civic apps stay current. Quality and freshness vary by the owning agency, so always check a dataset's update cadence and its column dictionary. This portal is the backbone for almost any data project.",
+      "whereToLook": ["open-data", "nyc-311", "betanyc"]
+    },
+    {
+      "id": "g-311",
+      "term": "311 service request",
+      "body": "311 is the city's non-emergency contact line and app for reporting problems and requesting services. Every contact becomes a “Service Request” with a type, location, owning agency, and status — and these flow into one of Open Data's most-used datasets. That makes 311 both a way to get something fixed and a rich dataset for spotting patterns. Remember it measures what's reported, not what exists: reporting rates differ across neighborhoods.",
+      "whereToLook": ["nyc-311", "open-data"]
+    },
+    {
+      "id": "g-mou",
+      "term": "MOU / interagency data sharing",
+      "body": "Agencies often need each other's data, and they formalize that with a Memorandum of Understanding (MOU) — an agreement setting out what data is shared, for what purpose, and under what safeguards. This legal plumbing shapes what's possible across agency lines and is mostly invisible from the outside. Understanding it explains why some data can be combined and some can't. It's also a reminder that not every barrier is technical.",
+      "whereToLook": ["data-sharing", "openrecords"]
+    }
+  ]
+}

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Advocate for street cleaning on your block — Playbook — NYC Gov for Builders</title>
+  <meta name="description" content="A guided experience for residents and volunteers: document a street-cleaning problem with 311, prove a pattern with NYC Open Data and the DMMR, raise it at your community board, and escalate to your Council member.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../playbooks/playbook.css">
+  <!-- No-JS fallback: keep every step open so the playbook is fully readable.
+       playbook.js adds .js to <html> and takes over progressive disclosure. -->
+  <style>html:not(.js) .step{display:block!important}html:not(.js) .step>summary{cursor:default}html:not(.js) .step:not([open]) .step-body{display:block}html:not(.js) .pb-progress{display:none}html:not(.js) .step .disclose{display:none}</style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="../index.html">
+        <span class="dot" aria-hidden="true"></span>
+        <span>NYC Gov for Builders<small>map the city's data landscape</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="../index.html">Start here</a>
+        <a href="../glossary.html">The Lay of the Land</a>
+        <a href="../directory.html">The Directory</a>
+        <a href="../playbooks.html" aria-current="page">Playbooks</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===================== Intro ===================== -->
+    <div class="wrap read pb-intro">
+      <p class="eyebrow"><a href="../playbooks.html" style="color:inherit;text-decoration:none">Playbooks</a> — a guided experience</p>
+      <h1>Advocate for street cleaning on your block.</h1>
+      <p class="lede">You keep noticing your block doesn't get cleaned the way it should. Here's how to turn that hunch into a documented case the people with authority will take seriously — using public sources, in the order you'd actually use them.</p>
+
+      <ul class="pb-meta" aria-label="About this playbook">
+        <li><span class="k">Who</span> Resident / volunteer</li>
+        <li><span class="k">Goal</span> Make the case for better street cleaning</li>
+        <li><span class="k">Sources</span> 5, no special access needed</li>
+      </ul>
+
+      <p class="pb-workflow">
+        <b>The path:</b>
+        Document with 311 <span class="arrow">→</span>
+        pull the data to prove a pattern <span class="arrow">→</span>
+        check what neighbors already raised <span class="arrow">→</span>
+        bring it to the community board <span class="arrow">→</span>
+        escalate to your Council member.
+      </p>
+    </div>
+
+    <!-- ===================== Source map ===================== -->
+    <div class="wrap read sourcemap">
+      <figure style="margin:0">
+        <figcaption style="margin:0 0 .75rem;font-weight:700;color:var(--ink-soft)">The path through the sources, in order</figcaption>
+        <div class="sourcemap-scroll">
+          <ol aria-label="Five sources in the order you use them: 1 311, 2 NYC Open Data, 3 Block Party, 4 your Community Board website, 5 your Council member">
+            <li>
+              <a class="map-node" href="#step-1">
+                <span class="num" aria-hidden="true">1</span>
+                <span class="label">311</span>
+                <span class="stage">Document</span>
+              </a>
+            </li>
+            <li><span class="link" aria-hidden="true"></span></li>
+            <li>
+              <a class="map-node" href="#step-2">
+                <span class="num" aria-hidden="true">2</span>
+                <span class="label">NYC Open Data</span>
+                <span class="stage">Prove the pattern</span>
+              </a>
+            </li>
+            <li><span class="link" aria-hidden="true"></span></li>
+            <li>
+              <a class="map-node" href="#step-3">
+                <span class="num" aria-hidden="true">3</span>
+                <span class="label">Block Party + CB site</span>
+                <span class="stage">Check the room</span>
+              </a>
+            </li>
+            <li><span class="link" aria-hidden="true"></span></li>
+            <li>
+              <a class="map-node" href="#step-4">
+                <span class="num" aria-hidden="true">4</span>
+                <span class="label">Community Board</span>
+                <span class="stage">Raise it</span>
+              </a>
+            </li>
+            <li><span class="link" aria-hidden="true"></span></li>
+            <li>
+              <a class="map-node" href="#step-5">
+                <span class="num" aria-hidden="true">5</span>
+                <span class="label">Council member</span>
+                <span class="stage">Escalate</span>
+              </a>
+            </li>
+          </ol>
+        </div>
+        <figcaption>The DMMR (citywide cleanliness performance) joins in at step&nbsp;2 to set the benchmark. Tap any node to jump to that step.</figcaption>
+      </figure>
+    </div>
+
+    <!-- ===================== The trail ===================== -->
+    <div class="wrap read" data-playbook>
+      <div class="pb-progress" aria-hidden="true">
+        <span id="pb-progress-label">Step 1 of 5</span>
+        <span class="bar"><span id="pb-progress-fill"></span></span>
+      </div>
+
+      <ol class="trail">
+
+        <!-- ---------- STEP 1 ---------- -->
+        <li id="step-1">
+          <span class="step-num" aria-hidden="true"></span>
+          <details class="step" open>
+            <summary>
+              <span>
+                <span class="q-label">The question</span>
+                <h2>How do I put this on the record?</h2>
+              </span>
+              <span class="disclose" aria-hidden="true"><span class="chev">▸</span><span class="more">Open</span><span class="less">Close</span></span>
+            </summary>
+            <div class="step-body">
+
+              <div class="step-section">
+                <p class="sec-k">The source to reach for</p>
+                <div class="preview is-official">
+                  <div class="preview-bar">
+                    <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                    <span class="addr">nyc.gov/311</span>
+                  </div>
+                  <div class="preview-body">
+                    <div class="preview-head">
+                      <p class="name"><a href="../directory.html#src-nyc-311">311</a></p>
+                      <span class="badges">
+                        <span class="badge run-official"><span class="ic" aria-hidden="true">★</span>Official</span>
+                        <span class="badge data-api"><span class="ic" aria-hidden="true">{ }</span>API</span>
+                      </span>
+                    </div>
+                    <p class="desc">Report problems (litter, potholes, noise), request services, and look up agencies. Every request becomes a 311 Service Request in Open Data.</p>
+                    <div class="callout">
+                      <span class="pointer" aria-hidden="true">→</span>
+                      <span class="ctxt">File a request and pick the category that matches what you see — typically a <b>Sanitation / Street Condition</b> complaint type. <b>Save the Service Request (SR) number.</b> That number is your evidence and how the rest of the trail finds your report.</span>
+                    </div>
+                    <div class="preview-foot">
+                      <a href="../directory.html#src-nyc-311">Directory entry</a>
+                      <a class="visit" href="https://www.nyc.gov/311/" target="_blank" rel="noopener">Open 311 ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-section">
+                <p class="sec-k">What you'll find</p>
+                <div class="find">
+                  <p style="margin:0">After you submit, you get a Service Request number and a status you can track. Each report is timestamped and geocoded to your address, which is exactly what makes it usable later.</p>
+                  <p class="small muted" style="margin:.5rem 0 0">Honest limit, straight from the source: <em>311 data reflects what's reported, not what exists — reporting rates differ by neighborhood.</em> One report is an anecdote; a consistent record is a pattern.</p>
+                </div>
+              </div>
+
+              <p class="handoff">
+                <span class="arrow" aria-hidden="true">→</span>
+                <span><b>Handoff:</b> your reports (and your neighbors') now live in the city's 311 data. Next, pull that data back out to see whether your block is an outlier.</span>
+              </p>
+            </div>
+          </details>
+        </li>
+
+        <!-- ---------- STEP 2 ---------- -->
+        <li id="step-2">
+          <span class="step-num" aria-hidden="true"></span>
+          <details class="step">
+            <summary>
+              <span>
+                <span class="q-label">The question</span>
+                <h2>Is my block actually an outlier — and how does it compare?</h2>
+              </span>
+              <span class="disclose" aria-hidden="true"><span class="chev">▸</span><span class="more">Open</span><span class="less">Close</span></span>
+            </summary>
+            <div class="step-body">
+
+              <div class="step-section">
+                <p class="sec-k">The source to reach for</p>
+                <div class="preview is-official">
+                  <div class="preview-bar">
+                    <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                    <span class="addr">data.cityofnewyork.us</span>
+                  </div>
+                  <div class="preview-body">
+                    <div class="preview-head">
+                      <p class="name"><a href="../directory.html#src-open-data">NYC Open Data</a></p>
+                      <span class="badges">
+                        <span class="badge run-official"><span class="ic" aria-hidden="true">★</span>Official</span>
+                        <span class="badge data-api"><span class="ic" aria-hidden="true">{ }</span>API</span>
+                      </span>
+                    </div>
+                    <p class="desc">The central catalog of thousands of datasets with Socrata APIs, maps, and visualizations — the backbone for civic hackers.</p>
+                    <div class="callout">
+                      <span class="pointer" aria-hidden="true">→</span>
+                      <span class="ctxt">Open the <b>311 Service Requests</b> dataset and <b>filter by Complaint Type</b> (Sanitation / Street Condition) and by your area. Group by date and location to see whether complaints cluster on your block versus the district around it.</span>
+                    </div>
+                    <div class="preview-foot">
+                      <a href="../directory.html#src-open-data">Directory entry</a>
+                      <a class="visit" href="https://data.cityofnewyork.us" target="_blank" rel="noopener">Open NYC Open Data ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-section">
+                <p class="sec-k">Then set the benchmark</p>
+                <div class="preview is-official">
+                  <div class="preview-bar">
+                    <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                    <span class="addr">dmmr.nyc.gov</span>
+                  </div>
+                  <div class="preview-body">
+                    <div class="preview-head">
+                      <p class="name"><a href="../directory.html#src-dmmr">DMMR — Dynamic Mayor's Management Report</a></p>
+                      <span class="badges">
+                        <span class="badge run-official"><span class="ic" aria-hidden="true">★</span>Official</span>
+                        <span class="badge data-bulk"><span class="ic" aria-hidden="true">⤓</span>Bulk download</span>
+                      </span>
+                    </div>
+                    <p class="desc">The interactive version of the Charter-mandated Mayor's Management Report: 1,000+ performance indicators across ~45 agencies, with multi-year comparisons, all downloadable.</p>
+                    <div class="callout">
+                      <span class="pointer" aria-hidden="true">→</span>
+                      <span class="ctxt">Look up the <b>sanitation / street-cleanliness</b> indicators to see the city's own performance target and how your district trends against it. This turns "my block is dirty" into "we're below the city's stated benchmark."</span>
+                    </div>
+                    <div class="preview-foot">
+                      <a href="../directory.html#src-dmmr">Directory entry</a>
+                      <a class="visit" href="https://dmmr.nyc.gov" target="_blank" rel="noopener">Open the DMMR ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-section">
+                <p class="sec-k">What the data looks like</p>
+                <div class="find">
+                  <p style="margin:0 0 .25rem">The 311 dataset is one row per service request. You're working with column shapes like these (no need to invent values):</p>
+                  <div class="table-shape" aria-hidden="true">
+                    <span class="col">Created Date</span>
+                    <span class="col">Complaint Type</span>
+                    <span class="col">Descriptor</span>
+                    <span class="col">Incident Address</span>
+                    <span class="col">Community Board</span>
+                    <span class="col">Status</span>
+                    <span class="col">Closed Date</span>
+                  </div>
+                  <ul>
+                    <li>Counts of complaints over time, grouped by block or community district.</li>
+                    <li>Resolution times — the gap between Created Date and Closed Date — as a fairness signal.</li>
+                    <li>From the DMMR: a citywide / per-district cleanliness rating you can cite as the official benchmark.</li>
+                  </ul>
+                  <p class="small muted" style="margin:.5rem 0 0">Stay conservative: describe the shape and the trend, and read DMMR indicators as performance signals, not the whole story.</p>
+                </div>
+              </div>
+
+              <p class="handoff">
+                <span class="arrow" aria-hidden="true">→</span>
+                <span><b>Handoff:</b> you now have a pattern and a benchmark. Before you bring it to a meeting, find out whether neighbors already raised this — so you arrive informed, not redundant.</span>
+              </p>
+            </div>
+          </details>
+        </li>
+
+        <!-- ---------- STEP 3 ---------- -->
+        <li id="step-3">
+          <span class="step-num" aria-hidden="true"></span>
+          <details class="step">
+            <summary>
+              <span>
+                <span class="q-label">The question</span>
+                <h2>Has anyone on my community board already raised this?</h2>
+              </span>
+              <span class="disclose" aria-hidden="true"><span class="chev">▸</span><span class="more">Open</span><span class="less">Close</span></span>
+            </summary>
+            <div class="step-body">
+
+              <div class="step-section">
+                <p class="sec-k">The source to reach for</p>
+                <div class="preview is-independent">
+                  <div class="preview-bar">
+                    <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                    <span class="addr">blockparty.studio</span>
+                  </div>
+                  <div class="preview-body">
+                    <div class="preview-head">
+                      <p class="name"><a href="../directory.html#src-block-party">Block Party</a></p>
+                      <span class="badges">
+                        <span class="badge run-independent"><span class="ic" aria-hidden="true">◇</span>Independent</span>
+                        <span class="badge data-bulk"><span class="ic" aria-hidden="true">⤓</span>Bulk download</span>
+                      </span>
+                    </div>
+                    <p class="desc">A public archive of community-board meeting transcripts from YouTube captions (roughly 2015 onward), topic-tagged using a taxonomy from DCP Community District Profiles, with highlights, an address→district lookup, and a per-board weekly email.</p>
+                    <div class="callout">
+                      <span class="pointer" aria-hidden="true">→</span>
+                      <span class="ctxt">Use the <b>address→district lookup</b> to confirm your board, then <b>search transcripts for "sanitation" or "street cleaning"</b> to see if and when it came up. Subscribe to the per-board weekly email so you don't miss the next mention.</span>
+                    </div>
+                    <div class="preview-foot">
+                      <a href="../directory.html#src-block-party">Directory entry</a>
+                      <a class="visit" href="https://blockparty.studio" target="_blank" rel="noopener">Open Block Party ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-section">
+                <p class="sec-k">Cross-check the official record</p>
+                <div class="preview is-official">
+                  <div class="preview-bar">
+                    <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                    <span class="addr">nyc.gov/site/&lt;your-board&gt;</span>
+                  </div>
+                  <div class="preview-body">
+                    <div class="preview-head">
+                      <p class="name"><a href="../directory.html#src-community-board-sites">Community Board websites</a></p>
+                      <span class="badges">
+                        <span class="badge run-official"><span class="ic" aria-hidden="true">★</span>Official</span>
+                        <span class="badge data-web"><span class="ic" aria-hidden="true">◍</span>Web only</span>
+                      </span>
+                    </div>
+                    <p class="desc">Per-board calendars, agendas and minutes, committee structure, district needs statements and budget requests, ULURP reviews, and local permits.</p>
+                    <div class="callout">
+                      <span class="pointer" aria-hidden="true">→</span>
+                      <span class="ctxt">Check the <b>agendas, minutes, and district needs statement</b> for sanitation items, and find the <b>committee that covers it</b> (often Sanitation or Environment). Note the <b>next meeting date and how to testify.</b></span>
+                    </div>
+                    <div class="preview-foot">
+                      <a href="../directory.html#src-community-board-sites">Directory entry</a>
+                      <a class="visit" href="https://www.nyc.gov/site/cau/community-boards/community-boards.page" target="_blank" rel="noopener">Find your board ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-section">
+                <p class="sec-k">What you'll find</p>
+                <div class="find">
+                  <ul>
+                    <li>From Block Party: searchable transcript moments where sanitation was discussed, with dates and links to the video — fast way to find the right meeting.</li>
+                    <li>From the board's own site: the committee that owns the topic, recent minutes, the district needs statement, and the meeting schedule with sign-up details.</li>
+                  </ul>
+                  <p class="small muted" style="margin:.5rem 0 0">Both have caveats worth knowing: Block Party's accuracy is bounded by caption quality, and board websites vary widely in quality and freshness. Treat them as leads, then confirm dates on the official site.</p>
+                </div>
+              </div>
+
+              <p class="handoff">
+                <span class="arrow" aria-hidden="true">→</span>
+                <span><b>Handoff:</b> you know the right committee, the meeting date, and whether this is new or recurring. Time to show up with your evidence.</span>
+              </p>
+            </div>
+          </details>
+        </li>
+
+        <!-- ---------- STEP 4 ---------- -->
+        <li id="step-4">
+          <span class="step-num" aria-hidden="true"></span>
+          <details class="step">
+            <summary>
+              <span>
+                <span class="q-label">The question</span>
+                <h2>How do I raise it where it can lead to action?</h2>
+              </span>
+              <span class="disclose" aria-hidden="true"><span class="chev">▸</span><span class="more">Open</span><span class="less">Close</span></span>
+            </summary>
+            <div class="step-body">
+
+              <div class="step-section">
+                <p class="sec-k">The source to reach for</p>
+                <div class="preview is-official">
+                  <div class="preview-bar">
+                    <span class="dots" aria-hidden="true"><span></span><span></span><span></span></span>
+                    <span class="addr">nyc.gov/site/&lt;your-board&gt;</span>
+                  </div>
+                  <div class="preview-body">
+                    <div class="preview-head">
+                      <p class="name"><a href="../directory.html#src-community-board-sites">Community Board websites</a></p>
+                      <span class="badges">
+                        <span class="badge run-official"><span class="ic" aria-hidden="true">★</span>Official</span>
+                        <span class="badge data-web"><span class="ic" aria-hidden="true">◍</span>Web only</span>
+                      </span>
+                    </div>
+                    <p class="desc">Per-board calendars, agendas and minutes, committee structure, district needs statements and budget requests, ULURP reviews, and local permits.</p>
+                    <div class="callout">
+                      <span class="pointer" aria-hidden="true">→</span>
+                      <span class="ctxt">Sign up for the <b>public comment period</b> at the relevant committee or full-board meeting. Bring your 311 pattern and the DMMR benchmark, and ask that it be reflected in the <b>district needs statement / budget request</b> so it carries forward.</span>
+                    </div>
+                    <div class="preview-foot">
+                      <a href="../directory.html#src-community-board-sites">Directory entry</a>
+                      <a class="visit" href="https://www.nyc.gov/site/cau/community-boards/community-boards.page" target="_blank" rel="noopener">Find your board ↗</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="step-section">
+                <p class="sec-k">What this gets you</p>
+                <div class="find">
+                  <ul>
+                    <li>Your concern, on the record in the board's minutes — a citable public reference.</li>
+                    <li>A chance to have it included in the district needs statement, the board's formal annual ask to the agencies and the budget process.</li>
+                    <li>Allies: board members and neighbors who care about the same blocks.</li>
+                  </ul>
+                  <p class="small muted" style="margin:.5rem 0 0">A community board is advisory — it can't order DSNY to do anything. That's exactly why the next step matters: you want someone with a vote and a budget line.</p>
+                </div>
+              </div>
+
+              <p class="handoff">
+                <span class="arrow" aria-hidden="true">→</span>
+                <span><b>Handoff:</b> with the board's record behind you, escalate to the office that can move money and lean on the agency.</span>
+              </p>
+            </div>
+          </details>
+        </li>
+
+        <!-- ---------- STEP 5 ---------- -->
+        <li id="step-5">
+          <span class="step-num" aria-hidden="true"></span>
+          <details class="step">
+            <summary>
+              <span>
+                <span class="q-label">The question</span>
+                <h2>Who has the authority to actually fix it?</h2>
+              </span>
+              <span class="disclose" aria-hidden="true"><span class="chev">▸</span><span class="more">Open</span><span class="less">Close</span></span>
+            </summary>
+            <div class="step-body">
+
+              <div class="step-section">
+                <p class="sec-k">Where to take it</p>
+                <div class="find">
+                  <p style="margin:0">Bring the same case — your 311 pattern, the DMMR benchmark, and the community board's record — to your <b>City Council member's office</b>. A Council office can press the agency directly, raise it in oversight, and steer discretionary or budget funding toward cleaning and basket service on the blocks you've documented.</p>
+                  <p class="small muted" style="margin:.6rem 0 0">We don't name the officeholder here on purpose — who represents your district changes, so look up your current Council member rather than relying on a name baked into a page. Use the same evidence packet; you've already done the hard part.</p>
+                </div>
+              </div>
+
+              <div class="step-section">
+                <p class="sec-k">What makes the ask land</p>
+                <div class="find">
+                  <ul>
+                    <li>A short pattern, not a single complaint: counts and resolution times from 311, by block.</li>
+                    <li>A benchmark they can't argue with: the city's own DMMR cleanliness target.</li>
+                    <li>A paper trail: the SR numbers and the community board minutes where it's recorded.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <p class="handoff">
+                <span class="arrow" aria-hidden="true">→</span>
+                <span><b>That's the trail.</b> You moved from a hunch to a documented, benchmarked, on-the-record case in the hands of someone who can act.</span>
+              </p>
+            </div>
+          </details>
+        </li>
+
+      </ol>
+    </div>
+
+    <!-- ===================== Outcome + cross-links ===================== -->
+    <div class="wrap read" style="padding-bottom:1rem">
+      <div class="outcome">
+        <h2>You now have…</h2>
+        <ul>
+          <li><b>A documented record</b> — 311 Service Request numbers that put the problem in the city's own data.</li>
+          <li><b>A pattern, not an anecdote</b> — Open Data showing how your block compares, against the DMMR's official cleanliness benchmark.</li>
+          <li><b>Situational awareness</b> — what your community board has already said, via Block Party and the board's own minutes.</li>
+          <li><b>A formal footprint</b> — your concern on the record at the board, with a path into the district needs statement.</li>
+          <li><b>An escalation</b> — the same evidence in front of your Council member, who can move money and the agency.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="wrap read" style="padding-bottom:3rem">
+      <h3>Keep going</h3>
+      <div class="rail" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr))">
+        <a href="../playbooks.html"><b>← All playbooks</b><span>The other guided experiences — agency prep, tracking a development, and more.</span></a>
+        <a href="../directory.html"><b>The Directory →</b><span>Every source used here, annotated, with full data-access notes.</span></a>
+        <a href="../glossary.html#g-311"><b>What is 311? →</b><span>How a 311 service request works and why it becomes open data.</span></a>
+        <a href="../glossary.html#g-community-board"><b>What is a Community Board? →</b><span>The hyper-local, advisory layer — and what it can and can't do.</span></a>
+        <a href="../glossary.html#g-open-data"><b>Open Data &amp; APIs →</b><span>How the city's open datasets and Socrata APIs work.</span></a>
+      </div>
+      <p class="muted small" style="margin-top:1.5rem">Conservative by design: source descriptions are quoted from the verified Directory, program and agency names are checked, and no eligibility rules or figures are invented. Officeholders are deliberately left out so this stays accurate as people change.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap foot-grid">
+      <div>
+        <h4>NYC Gov for Builders</h4>
+        <p>A curated, encyclopedic map of NYC government's data landscape for new civic technologists, gov employees, and CBO staff.</p>
+      </div>
+      <div>
+        <h4>Sections</h4>
+        <a href="../index.html">Start here</a>
+        <a href="../glossary.html">The Lay of the Land</a>
+        <a href="../directory.html">The Directory</a>
+        <a href="../playbooks.html">Playbooks</a>
+      </div>
+      <div>
+        <h4>Contribute</h4>
+        <a href="https://github.com/SourabhChakraborty/government-101" target="_blank" rel="noopener">Source on GitHub ↗</a>
+        <a href="https://github.com/SourabhChakraborty/government-101/blob/main/README.md" target="_blank" rel="noopener">Add a source (one data file) ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../playbooks/playbook.js"></script>
+</body>
+</html>
